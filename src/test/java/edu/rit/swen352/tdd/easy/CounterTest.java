@@ -39,5 +39,11 @@ class CounterTest {
     public void testGetLower() {
         Counter counter = new Counter();
         assertEquals(counter.getLower(),0);
+        int lower2 = 8;
+        Counter counter2 = new Counter(lower2);
+        assertEquals(counter2.getLower(), lower2);
+        int lower3 = -9;
+        Counter counter3 = new Counter(9,lower3);
+        assertEquals(counter3.getLower(), lower3);
     }
 }

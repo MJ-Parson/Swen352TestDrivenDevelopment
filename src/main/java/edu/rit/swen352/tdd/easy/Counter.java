@@ -42,4 +42,8 @@ public class Counter {
         this.upperbound = Integer.MAX_VALUE;
         this.lowerbound = 0;
     }
+
+    public int getLower() {
+        return this.lowerbound;
+    }
 }
