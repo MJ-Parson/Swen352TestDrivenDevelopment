@@ -36,4 +36,8 @@ public class MyList<T> {
             return false;
         }
     }
+
+    public int size() {
+        return size;
+    }
 }
