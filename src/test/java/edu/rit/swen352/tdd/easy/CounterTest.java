@@ -10,4 +10,12 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class CounterTest {
 
+    @Test
+    @DisplayName("Constructor Test")
+    public void testConstructor(){
+        int upperbound=1;
+        int lowerbound=-1;
+        counter = new Counter(upperbound,lowerbound);
+        assertInstanceOf(Counter,counter);
+    }
 }
