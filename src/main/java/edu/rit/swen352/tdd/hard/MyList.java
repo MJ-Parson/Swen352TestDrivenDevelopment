@@ -28,4 +28,12 @@ public class MyList<T> {
         this.elements = new Object[DEFAULT_CAPACITY];
         this.size = 0;
     }
+
+    public boolean isEmpty() {
+        if (size == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
