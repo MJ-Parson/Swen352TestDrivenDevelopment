@@ -104,6 +104,5 @@ class CounterTest {
         assertEquals(counter.getCount(), 1);
         counter.decrement();
         assertEquals(counter.getCount(),0);
-
     }
 }

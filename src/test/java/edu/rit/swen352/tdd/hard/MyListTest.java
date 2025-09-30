@@ -64,4 +64,19 @@ class MyListTest {
         int resp = list.remove(0);
         assertEquals(element,resp);
     }
+
+    @Test
+    @DisplayName("Test forEach, implementing iterator, performing simple loop functions.")
+    public void testForEach() {
+        int[] elements = {81,99,32,32,1,1,1,0};
+        MyList<Integer> list = new MyList<>();
+        for(int element: elements){
+            list.add(element); //fill list
+        }
+        int sum = 0;
+        for(int element : list){
+            sum += element;
+        }
+        assertEquals(sum, 247);
+    }
 }
