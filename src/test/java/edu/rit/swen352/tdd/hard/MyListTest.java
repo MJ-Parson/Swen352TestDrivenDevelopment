@@ -52,4 +52,15 @@ class MyListTest {
         list.add(element);
         assertEquals(list.get(0), element);
     }
+
+    @Test
+    @DisplayName("Test that before an add, remove does nothing. After, removes an element by correct index.")
+    public void testRemove() {
+        MyList<Integer> list = new MyList<>();
+        int element = 81;
+        int response = list.remove(0);
+        list.add(element);
+        int resp = list.remove(0);
+        assertEquals(element,resp);
+    }
 }
