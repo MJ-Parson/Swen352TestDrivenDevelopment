@@ -58,7 +58,8 @@ class MyListTest {
     public void testRemove() {
         MyList<Integer> list = new MyList<>();
         int element = 81;
-        int response = list.remove(0);
+        assertThrows(NoSuchElementException.class, () -> list.remove(0));
+        
         list.add(element);
         int resp = list.remove(0);
         assertEquals(element,resp);
