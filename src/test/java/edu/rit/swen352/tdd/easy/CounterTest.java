@@ -21,9 +21,16 @@ class CounterTest {
 
     @Test
     @DisplayName("Constructor Test, Only Lower Given")
-    public void testConstructorUpper() {
+    public void testConstructorLower() {
         int lowerbound = 4;
         Counter counter = new Counter(lowerbound);
+        assertInstanceOf(Counter.class, counter);
+    }
+
+    @Test
+    @DisplayName("Constructor Test, No Parameters Given")
+    public void testConstructorNone() {
+        Counter counter = new Counter();
         assertInstanceOf(Counter.class, counter);
     }
 }
