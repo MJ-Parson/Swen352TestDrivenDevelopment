@@ -30,4 +30,14 @@ class MyListTest {
         MyList<Integer> list = new MyList<>();
         assertEquals(list.size(), 0);
     }
+
+    @Test
+    @DisplayName("Check that after an add, size is larger and not empty")
+    public void testAdd() {
+        MyList<Integer> list = new MyList<>();
+        int element = 9;
+        list.add(element);
+        assertEquals(list.size(), 1);
+        assertFalse(list.isEmpty());
+    }
 }
