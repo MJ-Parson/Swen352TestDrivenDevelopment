@@ -20,10 +20,10 @@ class CounterTest {
     }
 
     @Test
-    @DisplayName("Constructor Test, Only Upper Given")
+    @DisplayName("Constructor Test, Only Lower Given")
     public void testConstructorUpper() {
-        int upperbound = 4;
-        Counter counter = new Counter(upperbound);
+        int lowerbound = 4;
+        Counter counter = new Counter(lowerbound);
         assertInstanceOf(Counter.class, counter);
     }
 }
