@@ -67,4 +67,20 @@ class CounterTest {
         assertEquals(counter.getUpper(), 11);
         assertTrue(counter.getLower() <= counter.getUpper());
     }
+
+    @Test
+    @DisplayName("GetCount, test at constructor")
+    public void testGetCountConstruction() {
+        int lower = 0;
+        Counter counter1 = new Counter();
+        assertEquals(counter1.getLower(), counter1.getCount());
+        int lower2 = -99;
+        Counter counter2 = new Counter(lower2);
+        assertEquals(counter2.getLower(), counter2.getCount());
+        int lower3 = 999999999;
+        Counter counter3 = new Counter(1000000000,lower3);
+        assertEquals(counter3.getLower(), counter3.getCount());
+
+        
+    }
 }
