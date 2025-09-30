@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.NoSuchElementException;
+
 /**
  * Test suite for the {@link MyList} component.
  */
@@ -39,5 +41,13 @@ class MyListTest {
         list.add(element);
         assertEquals(list.size(), 1);
         assertFalse(list.isEmpty());
+    }
+
+    @Test
+    @DisplayName("Test that before an add, there is an indexOOB error, after, return with the proper response")
+    public void testGet() {
+        MyList<Integer> list = new MyList<>();
+        int element = 87;
+        assertThrows(NoSuchElementException.class, list.get(0));
     }
 }
