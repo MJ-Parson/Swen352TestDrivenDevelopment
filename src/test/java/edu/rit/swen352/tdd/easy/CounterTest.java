@@ -11,11 +11,19 @@ import static org.junit.jupiter.api.Assertions.*;
 class CounterTest {
 
     @Test
-    @DisplayName("Constructor Test")
+    @DisplayName("Constructor Test, All Parameters")
     public void testConstructor(){
         int upperbound=1;
         int lowerbound=-1;
         Counter counter = new Counter(upperbound,lowerbound);
         assertInstanceOf(Counter.class,counter);
+    }
+
+    @Test
+    @DisplayName("Constructor Test, Only Upper Given")
+    public void testConstructorUpper() {
+        int upperbound = 4;
+        Counter counter = new Counter(upperbound);
+        assertInstanceOf(Counter.class, counter);
     }
 }
