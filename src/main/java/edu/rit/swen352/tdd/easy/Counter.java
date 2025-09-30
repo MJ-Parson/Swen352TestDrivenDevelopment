@@ -46,4 +46,8 @@ public class Counter {
     public int getLower() {
         return this.lowerbound;
     }
+
+    public int getUpper() {
+        return this.upperbound;
+    }
 }
