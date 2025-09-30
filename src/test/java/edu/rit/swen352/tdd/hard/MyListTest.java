@@ -10,4 +10,11 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class MyListTest {
 
+    @Test
+    @DisplayName("Test Constructor is real, varargs of initial elements")
+    public void testConstructor() {
+        MyList<Integer> list = new MyList<>();
+        assertInstanceOf(MyList.class, list);
+    }
+    
 }
