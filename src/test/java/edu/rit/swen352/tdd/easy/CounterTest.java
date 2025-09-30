@@ -33,4 +33,11 @@ class CounterTest {
         Counter counter = new Counter();
         assertInstanceOf(Counter.class, counter);
     }
+
+    @Test
+    @DisplayName("GetLower test, check accurate")
+    public void testGetLower() {
+        Counter counter = new Counter();
+        assertEquals(counter.getLower(),0);
+    }
 }
