@@ -1,5 +1,7 @@
 package edu.rit.swen352.tdd.hard;
 
+import java.util.NoSuchElementException;
+
 /**
  * MyList is a flexible-sized sequence of elements with no gaps.
  *
@@ -43,5 +45,12 @@ public class MyList<T> {
 
     public void add(T element) {
         elements[size++] = element;
+    }
+
+    public T get(int index) {
+        if(index < 0 || index >= size){
+            throw new NoSuchElementException("Index: " + index + ", Size: " + size);
+        }
+        return (T) elements[index];
     }
 }

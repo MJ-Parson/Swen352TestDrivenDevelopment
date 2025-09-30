@@ -48,6 +48,8 @@ class MyListTest {
     public void testGet() {
         MyList<Integer> list = new MyList<>();
         int element = 87;
-        assertThrows(NoSuchElementException.class, list.get(0));
+        assertThrows(NoSuchElementException.class, () -> list.get(0));
+        list.add(element);
+        assertEquals(list.get(0), element);
     }
 }
