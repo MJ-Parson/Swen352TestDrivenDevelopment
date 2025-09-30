@@ -16,5 +16,11 @@ class MyListTest {
         MyList<Integer> list = new MyList<>();
         assertInstanceOf(MyList.class, list);
     }
-    
+
+    @Test
+    @DisplayName("Check that after construction, isEmpty is true")
+    public void testIsEmpty() {
+        MyList<Integer> list = new MyList<>();
+        assertTrue(list.isEmpty());
+    }
 }
