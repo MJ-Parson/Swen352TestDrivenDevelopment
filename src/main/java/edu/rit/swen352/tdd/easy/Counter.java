@@ -37,4 +37,9 @@ public class Counter {
         this.lowerbound = lowerbound;
         this.upperbound = Integer.MAX_VALUE;
     }
+    // Test 1c: Constructor with no bounds
+    public Counter() {
+        this.upperbound = Integer.MAX_VALUE;
+        this.lowerbound = 0;
+    }
 }
