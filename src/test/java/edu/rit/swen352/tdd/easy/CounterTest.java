@@ -81,4 +81,15 @@ class CounterTest {
         Counter counter3 = new Counter(1000000000,lower3);
         assertEquals(counter3.getLower(), counter3.getCount());
     }
+
+    @Test
+    @DisplayName("Test incrementing, add one to current count, and does not go above the upper limit.")
+    public void testIncrement() {
+        int lower = 0;
+        int upper = 1;
+        Counter counter = new Counter(lower,upper);
+        counter.increment();
+        assertEquals(counter.getCount(),lower+1);
+        assertThrows(IllegalStateException.class, () -> counter.increment());
+    }
 }
