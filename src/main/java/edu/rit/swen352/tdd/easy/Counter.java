@@ -32,4 +32,9 @@ public class Counter {
         this.upperbound = upperbound;
         this.lowerbound = lowerbound;
     }
+    // Test 1b: Constructor with just lower bound
+    public Counter(int lowerbound) {
+        this.lowerbound = lowerbound;
+        this.upperbound = Integer.MAX_VALUE;
+    }
 }
