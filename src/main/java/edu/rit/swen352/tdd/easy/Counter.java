@@ -1,5 +1,7 @@
 package edu.rit.swen352.tdd.easy;
 
+import java.lang.IllegalStateException;
+
 /**
  * An integral counter with an optional lower and upper bound.
  * The count must start at the lower limit and must not exceed the upper limit.
@@ -64,5 +66,12 @@ public class Counter {
 
     public int getCount() {
         return this.count;
+    }
+
+    public void increment() {
+        this.count += 1;
+        if(this.count > this.upperbound) {
+            throw new IllegalStateException("Cannot increment over upper bound.");
+        }
     }
 }
