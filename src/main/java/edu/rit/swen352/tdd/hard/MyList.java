@@ -1,5 +1,6 @@
 package edu.rit.swen352.tdd.hard;
 
+import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
@@ -20,14 +21,39 @@ import java.util.NoSuchElementException;
  *
  * @param <T> the type of elements in the list.
  */
-public class MyList<T> {
+public class MyList<T> implements Iterable<T>{
 
-    private Object[] elements;
+    private T[] elements;
     private int size;
     private static final int DEFAULT_CAPACITY = 10;
 
+    @Override
+    public Iterator<T> iterator() {
+        return new MyListIterator();
+    }
+
+    private class MyListIterator implements Iterator<T> {
+        private int currentIndex=0;
+
+        @Override
+        public boolean hasNext() {
+            return currentIndex < size;
+        }
+
+        @Override
+        public T next() {
+            if (!hasNext()) {
+                throw new NoSuchElementException();
+            }
+            return elements[currentIndex++];
+        }
+    }
+
+
+    
+
     public MyList() {
-        this.elements = new Object[DEFAULT_CAPACITY];
+        this.elements = (T[]) new Object[DEFAULT_CAPACITY];
         this.size = 0;
     }
 

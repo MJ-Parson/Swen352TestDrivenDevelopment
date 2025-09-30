@@ -76,6 +76,7 @@ class MyListTest {
         int sum = 0;
         for(int element : list){
             sum += element;
+            System.err.println(element);
         }
         assertEquals(sum, 247);
     }
