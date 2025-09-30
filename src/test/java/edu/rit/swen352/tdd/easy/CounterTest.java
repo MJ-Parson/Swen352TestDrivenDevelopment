@@ -92,4 +92,18 @@ class CounterTest {
         assertEquals(counter.getCount(),lower+1);
         assertThrows(IllegalStateException.class, () -> counter.increment());
     }
+
+    @Test
+    @DisplayName("Test decrementing, remove one from current count, and does not go below the lower limit.")
+    public void testDecrement() {
+        int lower = 0;
+        int upper = 1;
+        Counter counter = new Counter(lower,upper);
+        assertThrows(IllegalStateException.class, () -> counter.decrement());
+        counter.increment();
+        assertEquals(counter.getCount(), 1);
+        counter.decrement();
+        assertEquals(counter.getCount(),0);
+
+    }
 }
