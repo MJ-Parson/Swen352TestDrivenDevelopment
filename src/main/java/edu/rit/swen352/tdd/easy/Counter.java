@@ -69,11 +69,16 @@ public class Counter {
     }
 
     public void increment() {
-        if(this.count == this.upperbound) {
+        if(this.count >= this.upperbound) {
             throw new IllegalStateException("Cannot increment over upper bound.");
         }
         this.count += 1;
     }
 
-    
+    public void decrement() {
+        if(this.count <= this.lowerbound) {
+            throw new IllegalStateException("Cannot decrement under lower bound.");
+        }
+        this.count -= 1;
+    }
 }
