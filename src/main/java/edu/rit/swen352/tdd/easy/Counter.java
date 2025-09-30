@@ -27,6 +27,7 @@ public class Counter {
 
     int upperbound;
     int lowerbound;
+    int count;
     // Test 1a: Constructor with all parameters met
     public Counter(int upperbound,int lowerbound) {
         if(upperbound >= lowerbound)
@@ -37,17 +38,20 @@ public class Counter {
             this.lowerbound = upperbound;
             this.upperbound = lowerbound;
         }
+        this.count = this.lowerbound;
         
     }
     // Test 1b: Constructor with just lower bound
     public Counter(int lowerbound) {
         this.lowerbound = lowerbound;
         this.upperbound = Integer.MAX_VALUE;
+        this.count = this.lowerbound;
     }
     // Test 1c: Constructor with no bounds
     public Counter() {
         this.upperbound = Integer.MAX_VALUE;
         this.lowerbound = 0;
+        this.count = this.lowerbound;
     }
 
     public int getLower() {
@@ -56,5 +60,9 @@ public class Counter {
 
     public int getUpper() {
         return this.upperbound;
+    }
+
+    public int getCount() {
+        return this.count;
     }
 }
