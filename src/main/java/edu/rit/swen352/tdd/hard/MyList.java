@@ -40,4 +40,8 @@ public class MyList<T> {
     public int size() {
         return size;
     }
+
+    public void add(T element) {
+        elements[size++] = element;
+    }
 }
