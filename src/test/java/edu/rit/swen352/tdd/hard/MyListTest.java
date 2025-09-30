@@ -23,4 +23,11 @@ class MyListTest {
         MyList<Integer> list = new MyList<>();
         assertTrue(list.isEmpty());
     }
+
+    @Test
+    @DisplayName("Check that after construction, size = 0")
+    public void testSize() {
+        MyList<Integer> list = new MyList<>();
+        assertEquals(list.size(), 0);
+    }
 }
