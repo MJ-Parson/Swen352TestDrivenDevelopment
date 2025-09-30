@@ -29,8 +29,15 @@ public class Counter {
     int lowerbound;
     // Test 1a: Constructor with all parameters met
     public Counter(int upperbound,int lowerbound) {
-        this.upperbound = upperbound;
-        this.lowerbound = lowerbound;
+        if(upperbound >= lowerbound)
+        {
+            this.upperbound = upperbound;
+            this.lowerbound = lowerbound;
+        } else {
+            this.lowerbound = upperbound;
+            this.upperbound = lowerbound;
+        }
+        
     }
     // Test 1b: Constructor with just lower bound
     public Counter(int lowerbound) {

@@ -65,5 +65,6 @@ class CounterTest {
         Counter counter = new Counter(8,11);
         assertEquals(counter.getLower(), 8);
         assertEquals(counter.getUpper(), 11);
+        assertTrue(counter.getLower() <= counter.getUpper());
     }
 }
