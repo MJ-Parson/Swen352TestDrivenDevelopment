@@ -53,4 +53,16 @@ public class MyList<T> {
         }
         return (T) elements[index];
     }
+
+    public T remove(int index) {
+        if (index<0 || index >= size) {
+            throw new NoSuchElementException("Index: " + index + ", Size: " + size);
+        }
+        T removedElement = (T) elements[index];
+        for (int i = index; i < size-1; i++){
+            elements[i] = elements[i+1];
+        }
+        elements[--size] = null; //clear
+        return removedElement;
+    }
 }
