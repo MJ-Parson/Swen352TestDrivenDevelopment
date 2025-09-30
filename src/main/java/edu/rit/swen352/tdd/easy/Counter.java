@@ -24,4 +24,12 @@ package edu.rit.swen352.tdd.easy;
  * </ul>
  */
 public class Counter {
+
+    int upperbound;
+    int lowerbound;
+    // Test 1a: Constructor with all parameters met
+    public Counter(int upperbound,int lowerbound) {
+        this.upperbound = upperbound;
+        this.lowerbound = lowerbound;
+    }
 }

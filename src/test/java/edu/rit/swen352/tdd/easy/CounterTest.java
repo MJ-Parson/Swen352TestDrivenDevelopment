@@ -15,7 +15,7 @@ class CounterTest {
     public void testConstructor(){
         int upperbound=1;
         int lowerbound=-1;
-        counter = new Counter(upperbound,lowerbound);
-        assertInstanceOf(Counter,counter);
+        Counter counter = new Counter(upperbound,lowerbound);
+        assertInstanceOf(Counter.class,counter);
     }
 }
