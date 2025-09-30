@@ -46,4 +46,15 @@ class CounterTest {
         Counter counter3 = new Counter(9,lower3);
         assertEquals(counter3.getLower(), lower3);
     }
+
+    @Test
+    @DisplayName("GetUpper test, check accurate")
+    public void testGetUpper() {
+        Counter counter = new Counter();
+        int upper1 = Integer.MAX_VALUE;
+        assertEquals(counter.getUpper(), upper1);
+        int upper2 = 4;
+        Counter counter2 = new Counter(upper2,0);
+        assertEquals(counter2.getUpper(), upper2);
+    }
 }
