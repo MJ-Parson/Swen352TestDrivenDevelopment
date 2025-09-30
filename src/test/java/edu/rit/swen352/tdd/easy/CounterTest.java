@@ -57,4 +57,13 @@ class CounterTest {
         Counter counter2 = new Counter(upper2,0);
         assertEquals(counter2.getUpper(), upper2);
     }
+
+    @Test
+    @DisplayName("Constructor Logic, check lower < upper")
+    public void testConstructorLogic() {
+        // upperbound < lowerbound, so switch around
+        Counter counter = new Counter(8,11);
+        assertEquals(counter.getLower(), 8);
+        assertEquals(counter.getUpper(), 11);
+    }
 }
