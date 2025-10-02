@@ -11,3 +11,4 @@ import static org.junit.jupiter.api.Assertions.*;
 class TemperatureTest {
 
 }
+//Test
