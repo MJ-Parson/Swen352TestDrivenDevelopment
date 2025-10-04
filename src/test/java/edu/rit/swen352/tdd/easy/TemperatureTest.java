@@ -32,4 +32,3 @@ class TemperatureTest {
     }
 
 }
-//Test
