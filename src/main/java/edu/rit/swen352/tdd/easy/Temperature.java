@@ -21,8 +21,12 @@ public class Temperature {
   public enum TemperatureUnit {
     CELSIUS, FAHRENHEIT, KELVIN;
   }
+  private double value;
+  private TemperatureUnit unit;
+
   public Temperature(double value, TemperatureUnit unit) {
-    throw new UnsupportedOperationException("NYI");
+    this.value = value;
+    this.unit = unit;
   }
 
 }
