@@ -70,4 +70,12 @@ class TemperatureTest {
         assertNotNull(fahrenheit);
     }
 
+    @Test
+    @DisplayName("6: Convert Celsius to Kelvin")
+    void testConvertCelsiusToKelvin() {
+        Temperature celsius = new Temperature(0.0, Temperature.TemperatureUnit.CELSIUS);
+        Temperature kelvin = celsius.convertTo(Temperature.TemperatureUnit.KELVIN);
+        assertNotNull(kelvin);
+    }
+
 }
