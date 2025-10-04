@@ -46,6 +46,12 @@ class TemperatureTest {
         });
     }
 
-
+    @Test
+    @DisplayName("3: Reject temperature below absolute zero in Fahrenheit")
+    void testRejectBelowAbsoluteZeroFahrenheit() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Temperature(-500.0, Temperature.TemperatureUnit.FAHRENHEIT);
+        });
+    }
 
 }
