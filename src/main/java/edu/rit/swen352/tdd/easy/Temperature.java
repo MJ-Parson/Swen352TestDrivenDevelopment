@@ -31,6 +31,9 @@ public class Temperature {
     if (unit == TemperatureUnit.FAHRENHEIT && value < -459.67) {
       throw new IllegalArgumentException("Temperature below absolute zero");
     }
+    if (unit == TemperatureUnit.KELVIN && value < 0) {
+      throw new IllegalArgumentException("Temperature below absolute zero");
+    }
     this.value = value;
     this.unit = unit;
   }
