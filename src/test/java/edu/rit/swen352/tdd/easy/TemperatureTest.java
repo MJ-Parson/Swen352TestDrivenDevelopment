@@ -62,4 +62,12 @@ class TemperatureTest {
         });
     }
 
+    @Test
+    @DisplayName("5: Convert Celsius to Fahrenheit")
+    void testConvertCelsiusToFahrenheit() {
+        Temperature celsius = new Temperature(0.0, Temperature.TemperatureUnit.CELSIUS);
+        Temperature fahrenheit = celsius.convertTo(Temperature.TemperatureUnit.FAHRENHEIT);
+        assertNotNull(fahrenheit);
+    }
+
 }

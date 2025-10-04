@@ -42,4 +42,8 @@ public class Temperature {
     this(value, TemperatureUnit.CELSIUS);
   }
 
+  public Temperature convertTo(TemperatureUnit unit) {
+    throw new UnsupportedOperationException("NYI");
+  }
+
 }
