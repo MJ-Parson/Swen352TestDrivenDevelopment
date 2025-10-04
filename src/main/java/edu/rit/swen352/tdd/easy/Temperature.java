@@ -42,8 +42,16 @@ public class Temperature {
     this(value, TemperatureUnit.CELSIUS);
   }
 
-  public Temperature convertTo(TemperatureUnit unit) {
-    throw new UnsupportedOperationException("NYI");
+  public Temperature convertTo(TemperatureUnit targetUnit) {
+    if (this.unit == targetUnit) {
+      return new Temperature(this.value, this.unit);
+    }
+
+    if (this.unit == TemperatureUnit.CELSIUS && targetUnit == TemperatureUnit.FAHRENHEIT) {
+      return new Temperature((this.value * 9.0/5.0) + 32, TemperatureUnit.FAHRENHEIT);
+    }
+
+    throw new UnsupportedOperationException("Conversion not yet implemented");
   }
 
 }
