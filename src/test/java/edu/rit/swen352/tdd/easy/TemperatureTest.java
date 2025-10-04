@@ -24,6 +24,12 @@ class TemperatureTest {
         assertNotNull(temp);
     }
 
+    @Test
+    @DisplayName("1c: Construct Temperature with value and unit (Kelvin)")
+    void testConstructorWithKelvin() {
+        Temperature temp = new Temperature(298.15, Temperature.TemperatureUnit.KELVIN);
+        assertNotNull(temp);
+    }
 
 }
 //Test
