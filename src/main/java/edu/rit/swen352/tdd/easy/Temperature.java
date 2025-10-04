@@ -30,7 +30,7 @@ public class Temperature {
   }
 
   public Temperature(double value) {
-    throw new UnsupportedOperationException("NYI");
+    this(value, TemperatureUnit.CELSIUS);
   }
 
 }
