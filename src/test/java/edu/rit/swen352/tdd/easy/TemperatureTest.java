@@ -86,4 +86,14 @@ class TemperatureTest {
         assertNotNull(celsius);
     }
 
+    @Test
+    @DisplayName("8: Convert Fahrenheit to Kelvin")
+    void testConvertFahrenheitToKelvin() {
+        Temperature fahrenheit = new Temperature(32.0, Temperature.TemperatureUnit.FAHRENHEIT);
+        Temperature kelvin = fahrenheit.convertTo(Temperature.TemperatureUnit.KELVIN);
+        assertNotNull(kelvin);
+    }
+
+
+
 }
