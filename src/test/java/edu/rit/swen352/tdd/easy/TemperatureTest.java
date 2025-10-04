@@ -31,4 +31,12 @@ class TemperatureTest {
         assertNotNull(temp);
     }
 
+    @Test
+    @DisplayName("1d: Construct Temperature with value only (defaults to Celsius)")
+    void testConstructorDefaultUnit() {
+        Temperature temp = new Temperature(25.0);
+        assertNotNull(temp);
+    }
+
+
 }

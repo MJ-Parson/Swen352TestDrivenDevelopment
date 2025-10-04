@@ -29,4 +29,8 @@ public class Temperature {
     this.unit = unit;
   }
 
+  public Temperature(double value) {
+    throw new UnsupportedOperationException("NYI");
+  }
+
 }
