@@ -38,5 +38,14 @@ class TemperatureTest {
         assertNotNull(temp);
     }
 
+    @Test
+    @DisplayName("2: Reject temperature below absolute zero in Celsius")
+    void testRejectBelowAbsoluteZeroCelsius() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Temperature(-300.0, Temperature.TemperatureUnit.CELSIUS);
+        });
+    }
+
+
 
 }
