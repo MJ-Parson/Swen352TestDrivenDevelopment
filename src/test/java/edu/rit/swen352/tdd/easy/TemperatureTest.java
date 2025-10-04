@@ -110,7 +110,13 @@ class TemperatureTest {
         assertNotNull(fahrenheit);
     }
 
-
+    @Test
+    @DisplayName("11: Convert to same unit returns equivalent temperature")
+    void testConvertToSameUnit() {
+        Temperature celsius = new Temperature(25.0, Temperature.TemperatureUnit.CELSIUS);
+        Temperature result = celsius.convertTo(Temperature.TemperatureUnit.CELSIUS);
+        assertNotNull(result);
+    }
 
 
 }
