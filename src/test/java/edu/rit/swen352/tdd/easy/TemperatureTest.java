@@ -17,6 +17,13 @@ class TemperatureTest {
         assertNotNull(temp);
     }
 
+    @Test
+    @DisplayName("1b: Construct Temperature with value and unit (Fahrenheit)")
+    void testConstructorWithFahrenheit() {
+        Temperature temp = new Temperature(77.0, Temperature.TemperatureUnit.FAHRENHEIT);
+        assertNotNull(temp);
+    }
+
 
 }
 //Test
