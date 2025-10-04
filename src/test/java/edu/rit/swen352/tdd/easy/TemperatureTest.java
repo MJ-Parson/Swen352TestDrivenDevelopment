@@ -94,6 +94,13 @@ class TemperatureTest {
         assertNotNull(kelvin);
     }
 
+    @Test
+    @DisplayName("9: Convert Kelvin to Celsius")
+    void testConvertKelvinToCelsius() {
+        Temperature kelvin = new Temperature(273.15, Temperature.TemperatureUnit.KELVIN);
+        Temperature celsius = kelvin.convertTo(Temperature.TemperatureUnit.CELSIUS);
+        assertNotNull(celsius);
+    }
 
 
 }
