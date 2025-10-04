@@ -68,6 +68,11 @@ public class Temperature {
       return new Temperature(this.value - 273.15, TemperatureUnit.CELSIUS);
     }
 
+    if (this.unit == TemperatureUnit.KELVIN && targetUnit == TemperatureUnit.FAHRENHEIT) {
+      double celsius = this.value - 273.15;
+      return new Temperature((celsius * 9.0/5.0) + 32, TemperatureUnit.FAHRENHEIT);
+    }
+
     throw new UnsupportedOperationException("Conversion not yet implemented");
   }
 
