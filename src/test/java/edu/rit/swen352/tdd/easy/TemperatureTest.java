@@ -54,4 +54,12 @@ class TemperatureTest {
         });
     }
 
+    @Test
+    @DisplayName("4: Reject temperature below absolute zero in Kelvin")
+    void testRejectBelowAbsoluteZeroKelvin() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Temperature(-1.0, Temperature.TemperatureUnit.KELVIN);
+        });
+    }
+
 }
