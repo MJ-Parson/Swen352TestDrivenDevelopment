@@ -1,5 +1,6 @@
 package edu.rit.swen352.tdd.easy;
 
+
 /**
  * An temperature measurement.
  *
@@ -20,4 +21,8 @@ public class Temperature {
   public enum TemperatureUnit {
     CELSIUS, FAHRENHEIT, KELVIN;
   }
+  public Temperature(double value, TemperatureUnit unit) {
+    throw new UnsupportedOperationException("NYI");
+  }
+
 }
