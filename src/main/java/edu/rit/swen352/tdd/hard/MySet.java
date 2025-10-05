@@ -69,7 +69,13 @@ public class MySet<T> {
     }
 
     public <R> MySet<R> map(Function<T, R> transformer) {
-        throw new UnsupportedOperationException("NYI");
+        MySet<R> result = new MySet<>();
+        for (int i = 0; i < size; i++) {
+            @SuppressWarnings("unchecked")
+            T element = (T) elements[i];
+            result.add(transformer.apply(element));
+        }
+        return result;
     }
 
 }
