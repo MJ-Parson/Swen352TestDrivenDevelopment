@@ -1,5 +1,5 @@
 package edu.rit.swen352.tdd.hard;
-
+import java.util.function.Function;
 /**
  * MySet is a flexible-sized, unordered collection of elements.
  * The {@link Object#equals(Object)} method is used to determine if two values are equal.
@@ -68,5 +68,8 @@ public class MySet<T> {
         }
     }
 
+    public <R> MySet<R> map(Function<T, R> transformer) {
+        throw new UnsupportedOperationException("NYI");
+    }
 
 }

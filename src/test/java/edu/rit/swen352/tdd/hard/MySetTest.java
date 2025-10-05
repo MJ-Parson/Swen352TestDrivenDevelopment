@@ -67,4 +67,18 @@ class MySetTest {
         assertFalse(set.contains("b"));
     }
 
+    @Test
+    @DisplayName("7: Map transforms elements into new set")
+    void testMap() {
+        MySet<String> set = new MySet<>("a", "b", "c");
+        MySet<String> mapped = set.map(s -> s.toUpperCase());
+
+        assertEquals(3, mapped.size());
+        assertTrue(mapped.contains("A"));
+        assertTrue(mapped.contains("B"));
+        assertTrue(mapped.contains("C"));
+
+        assertTrue(set.contains("a")); // Verify with unchanged one
+    }
+
 }
