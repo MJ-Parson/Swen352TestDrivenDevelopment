@@ -32,7 +32,7 @@ public class MySet<T> {
     }
 
     public boolean isEmpty() {
-        throw new UnsupportedOperationException("NYI");
+        return size == 0;
     }
 
 }
