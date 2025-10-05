@@ -24,7 +24,7 @@ public class MySet<T> {
 
     @SafeVarargs
     public MySet(T... elements) {
-        this.size = 0;
+        this.size = elements.length;
     }
 
     public int size() {
