@@ -34,5 +34,4 @@ public class MySet<T> {
     public boolean isEmpty() {
         return size == 0;
     }
-
 }
