@@ -41,5 +41,12 @@ class MySetTest {
         assertEquals(3, set.size());
     }
 
+    @Test
+    @DisplayName("4: Test contains for existing/non-existing element")
+    void testContains() {
+        MySet<String> set = new MySet<>("a", "b");
+        assertTrue(set.contains("a"));
+        assertFalse(set.contains("c"));
+    }
 
 }

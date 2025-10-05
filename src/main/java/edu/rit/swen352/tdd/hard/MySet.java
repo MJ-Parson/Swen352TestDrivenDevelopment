@@ -34,4 +34,8 @@ public class MySet<T> {
     public boolean isEmpty() {
         return size == 0;
     }
+
+    public boolean contains(T element) {
+        throw new UnsupportedOperationException("NYI");
+    }
 }
