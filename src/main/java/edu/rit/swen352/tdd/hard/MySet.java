@@ -49,4 +49,10 @@ public class MySet<T> {
         }
         return false;
     }
+
+    public void add(T element) {
+        throw new UnsupportedOperationException("NYI");
+    }
+
+
 }

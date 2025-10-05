@@ -49,4 +49,13 @@ class MySetTest {
         assertFalse(set.contains("c"));
     }
 
+    @Test
+    @DisplayName("5: Add element and verify size increase")
+    void testAdd() {
+        MySet<String> set = new MySet<>();
+        set.add("a");
+        assertEquals(1, set.size());
+        assertTrue(set.contains("a"));
+    }
+
 }
