@@ -17,5 +17,13 @@ class MySetTest {
         assertNotNull(set);
     }
 
+    @Test
+    @DisplayName("1b: Construct set with initial elements")
+    void testConstructorWithElements() {
+        MySet<String> set = new MySet<>("a", "b", "c");
+        assertEquals(3, set.size());
+    }
+
+
 
 }
