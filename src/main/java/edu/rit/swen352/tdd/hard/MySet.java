@@ -56,5 +56,9 @@ public class MySet<T> {
         }
     }
 
+    public void remove(T element) {
+        throw new UnsupportedOperationException("NYI");
+    }
+
 
 }

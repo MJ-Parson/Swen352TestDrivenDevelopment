@@ -58,4 +58,13 @@ class MySetTest {
         assertTrue(set.contains("a"));
     }
 
+    @Test
+    @DisplayName("6: Remove element and verify size decrease")
+    void testRemove() {
+        MySet<String> set = new MySet<>("a", "b", "c");
+        set.remove("b");
+        assertEquals(2, set.size());
+        assertFalse(set.contains("b"));
+    }
+
 }
