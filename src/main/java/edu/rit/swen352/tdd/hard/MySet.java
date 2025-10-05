@@ -20,10 +20,15 @@ package edu.rit.swen352.tdd.hard;
  * @param <T> the type of elements in the set.
  */
 public class MySet<T> {
+    private int size;
 
     @SafeVarargs
     public MySet(T... elements) {
-        throw new UnsupportedOperationException("NYI");
+        this.size = 0;
+    }
+
+    public int size() {
+        return size;
     }
 
 }
