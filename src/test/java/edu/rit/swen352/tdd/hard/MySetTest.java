@@ -34,4 +34,12 @@ class MySetTest {
         assertFalse(nonEmptySet.isEmpty());
     }
 
+    @Test
+    @DisplayName("3: Test size returns correct count")
+    void testSize() {
+        MySet<String> set = new MySet<>("a", "b", "c");
+        assertEquals(3, set.size());
+    }
+
+
 }
