@@ -10,4 +10,11 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class MySetTest {
 
+    @Test
+    @DisplayName("1b: Construct set with initial elements")
+    void testConstructorWithElements() {
+        MySet<String> set = new MySet<>("a", "b", "c");
+        assertNotNull(set);
+    }
+
 }
