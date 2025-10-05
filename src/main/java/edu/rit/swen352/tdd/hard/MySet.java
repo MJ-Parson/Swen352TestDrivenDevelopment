@@ -20,22 +20,33 @@ package edu.rit.swen352.tdd.hard;
  * @param <T> the type of elements in the set.
  */
 public class MySet<T> {
+    private static final int INITIAL_CAPACITY = 16;
+    private Object[] elements;
     private int size;
 
     @SafeVarargs
     public MySet(T... elements) {
-        this.size = elements.length;
-    }
-
-    public int size() {
-        return size;
+        this.elements = new Object[INITIAL_CAPACITY];
+        this.size = 0;
+        for (T element : elements) {
+            this.elements[size++] = element;
+        }
     }
 
     public boolean isEmpty() {
         return size == 0;
     }
 
+    public int size() {
+        return size;
+    }
+
     public boolean contains(T element) {
-        throw new UnsupportedOperationException("NYI");
+        for (int i = 0; i < size; i++) {
+            if (elements[i].equals(element)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
