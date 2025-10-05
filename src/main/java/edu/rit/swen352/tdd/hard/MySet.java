@@ -51,7 +51,9 @@ public class MySet<T> {
     }
 
     public void add(T element) {
-        throw new UnsupportedOperationException("NYI");
+        if (!contains(element)) {
+            elements[size++] = element;
+        }
     }
 
 
