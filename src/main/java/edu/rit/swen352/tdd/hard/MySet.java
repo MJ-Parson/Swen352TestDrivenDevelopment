@@ -57,7 +57,15 @@ public class MySet<T> {
     }
 
     public void remove(T element) {
-        throw new UnsupportedOperationException("NYI");
+        for (int i = 0; i < size; i++) {
+            if (elements[i].equals(element)) {
+                for (int j = i; j < size - 1; j++) { // Shift left
+                    elements[j] = elements[j + 1];
+                }
+                elements[--size] = null;
+                return;
+            }
+        }
     }
 
 
