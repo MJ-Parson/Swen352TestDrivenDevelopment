@@ -24,6 +24,14 @@ class MySetTest {
         assertEquals(3, set.size());
     }
 
+    @Test
+    @DisplayName("2: Test isEmpty on empty and non-empty set")
+    void testIsEmpty() {
+        MySet<String> emptySet = new MySet<>();
+        MySet<String> nonEmptySet = new MySet<>("a");
 
+        assertTrue(emptySet.isEmpty());
+        assertFalse(nonEmptySet.isEmpty());
+    }
 
 }

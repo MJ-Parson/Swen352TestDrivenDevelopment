@@ -31,4 +31,8 @@ public class MySet<T> {
         return size;
     }
 
+    public boolean isEmpty() {
+        throw new UnsupportedOperationException("NYI");
+    }
+
 }
