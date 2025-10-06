@@ -46,4 +46,9 @@ public class MyStack<T> {
         return this.size;
     }
 
+    public void push(T element) {
+        this.elements[this.size] = element;
+        this.size++;
+    }
+
 }
