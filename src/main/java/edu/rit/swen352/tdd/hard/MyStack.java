@@ -29,4 +29,9 @@ public class MyStack<T> {
         this.size = 0;
     }
     
+    public MyStack() {
+        //16 as default from javadocs
+        this(16);
+    }
+
 }
