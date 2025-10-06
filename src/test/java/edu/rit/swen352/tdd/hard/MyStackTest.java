@@ -87,5 +87,28 @@ class MyStackTest {
         assertEquals(3, stack.size());
     }
 
+    @Test
+    @DisplayName("Pop Test, Removes and Returns Top Element in LIFO Order")
+    public void testPop() {
+        MyStack<String> stack = new MyStack<>();
+        stack.push("first");
+        stack.push("second");
+        stack.push("third");
+        assertEquals(3, stack.size());
+        
+        String popped1 = stack.pop();
+        assertEquals("third", popped1);
+        assertEquals(2, stack.size());
+        
+        String popped2 = stack.pop();
+        assertEquals("second", popped2);
+        assertEquals(1, stack.size());
+        
+        String popped3 = stack.pop();
+        assertEquals("first", popped3);
+        assertEquals(0, stack.size());
+        assertTrue(stack.isEmpty());
+    }
+
 
 }
