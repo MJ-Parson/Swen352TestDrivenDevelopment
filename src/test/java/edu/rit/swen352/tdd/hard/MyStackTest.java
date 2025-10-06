@@ -57,5 +57,22 @@ class MyStackTest {
         assertEquals(0, stack2.size());
     }
 
+    @Test
+    @DisplayName("Push Test, Adds Element to Stack and Increases Size")
+    public void testPush() {
+        MyStack<String> stack = new MyStack<>();
+        assertTrue(stack.isEmpty());
+        
+        stack.push("first");
+        assertEquals(1, stack.size());
+        assertFalse(stack.isEmpty());
+        
+        stack.push("second");
+        assertEquals(2, stack.size());
+        
+        stack.push("third");
+        assertEquals(3, stack.size());
+    }
+
 
 }
