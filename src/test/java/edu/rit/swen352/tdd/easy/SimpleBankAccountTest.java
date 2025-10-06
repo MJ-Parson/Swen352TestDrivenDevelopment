@@ -64,4 +64,19 @@ class SimpleBankAccountTest {
         assertEquals(17575, account.getBalance()); //$175.75
     }
 
+    @Test
+    @DisplayName("Withdraw Test, Subtracts Amount in Cents from Balance")
+    public void testWithdraw() {
+        SimpleBankAccount account = new SimpleBankAccount(10000); //$100
+        account.withdraw(3000); //$30
+        assertEquals(7000, account.getBalance());//$70
+        
+        account.withdraw(2050); //$20.50
+        assertEquals(4950, account.getBalance()); //$49.50
+        
+        account.withdraw(4950); //$49.50
+        assertEquals(0, account.getBalance());
+        assertTrue(account.isAccountEmpty());
+    }
+
 }
