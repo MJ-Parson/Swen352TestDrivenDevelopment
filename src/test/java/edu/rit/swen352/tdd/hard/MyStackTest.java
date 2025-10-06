@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.NoSuchElementException;
+
 /**
  * Test suite for the {@link MyStack} component.
  */
@@ -108,6 +110,20 @@ class MyStackTest {
         assertEquals("first", popped3);
         assertEquals(0, stack.size());
         assertTrue(stack.isEmpty());
+    }
+
+    @Test
+    @DisplayName("Pop Test, Throws Error When Stack is Empty")
+    public void testPopWhenEmpty() {
+        MyStack<String> stack = new MyStack<>();
+        assertTrue(stack.isEmpty());
+        
+        assertThrows(NoSuchElementException.class, () -> stack.pop());
+        
+        stack.push("element");
+        stack.pop();
+        assertTrue(stack.isEmpty());
+        assertThrows(NoSuchElementException.class, () -> stack.pop());
     }
 
 
