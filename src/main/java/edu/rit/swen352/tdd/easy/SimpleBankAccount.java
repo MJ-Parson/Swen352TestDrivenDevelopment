@@ -3,6 +3,9 @@ package edu.rit.swen352.tdd.easy;
 /**
  * An American bank account that permits deposits and withdrawals.
  * The balance must never be negative.
+ * 
+ * As a work-around to the floating point issue, I chose to have all input be in cents.
+ * As an example, an input of 100 = 100 cents = $1.00
  *
  * <p>
  * You must implement these features:
@@ -20,5 +23,34 @@ package edu.rit.swen352.tdd.easy;
  * </ul>
  */
 public class SimpleBankAccount {
+
+    private int balanceCents;
+    
+    public SimpleBankAccount(int initialBalanceCents) {
+        this.balanceCents = initialBalanceCents;
+    }
+
+    public SimpleBankAccount() {
+        this.balanceCents = 0;
+    }
+
+    public double getBalance() {
+        return this.balanceCents;
+    }
+
+    public boolean isAccountEmpty() {
+        return this.balanceCents == 0;
+    }
+
+    public void deposit(int amountCents) {
+        this.balanceCents += amountCents;
+    }
+
+    public void withdraw(int amountCents) {
+        if (amountCents > this.balanceCents) {
+            throw new IllegalStateException("Cannot withdraw more than current balance. (haha, broke)");
+        }
+        this.balanceCents -= amountCents;
+    }
 
 }

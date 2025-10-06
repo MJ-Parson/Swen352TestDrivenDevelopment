@@ -5,9 +5,126 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.NoSuchElementException;
+
 /**
  * Test suite for the {@link MyStack} component.
  */
 class MyStackTest {
+
+    @Test
+    @DisplayName("Constructor Test, Create Stack with Specified Capacity")
+    public void testConstructor() {
+        int capacity = 10;
+        MyStack<String> stack = new MyStack<>(capacity);
+        assertInstanceOf(MyStack.class, stack);
+    }
+
+    @Test
+    @DisplayName("Constructor Test, Create Stack with Default Capacity of 16")
+    public void testConstructorDefault() {
+        MyStack<Integer> stack = new MyStack<>();
+        assertInstanceOf(MyStack.class, stack);
+    }
+
+    @Test
+    @DisplayName("GetCapacity Test, Returns Correct Capacity with Different Constructors")
+    public void testGetCapacity() {
+        MyStack<String> stack1 = new MyStack<>();
+        assertEquals(16, stack1.getCapacity());
+        
+        int capacity2 = 5;
+        MyStack<Integer> stack2 = new MyStack<>(capacity2);
+        assertEquals(capacity2, stack2.getCapacity());
+        
+        int capacity3 = 100;
+        MyStack<Double> stack3 = new MyStack<>(capacity3);
+        assertEquals(capacity3, stack3.getCapacity());
+    }
+
+    @Test
+    @DisplayName("IsEmpty Test, Returns True When Stack is Empty")
+    public void testIsEmpty() {
+        MyStack<String> stack = new MyStack<>();
+        assertTrue(stack.isEmpty());
+    }
+
+    @Test
+    @DisplayName("Size Test, Returns Zero at Construction")
+    public void testSize() {
+        MyStack<String> stack1 = new MyStack<>();
+        assertEquals(0, stack1.size());
+        
+        MyStack<Integer> stack2 = new MyStack<>(5);
+        assertEquals(0, stack2.size());
+    }
+
+    @Test
+    @DisplayName("Push Test, Adds Element to Stack and Increases Size")
+    public void testPush() {
+        MyStack<String> stack = new MyStack<>();
+        assertTrue(stack.isEmpty());
+        
+        stack.push("first");
+        assertEquals(1, stack.size());
+        assertFalse(stack.isEmpty());
+        
+        stack.push("second");
+        assertEquals(2, stack.size());
+        
+        stack.push("third");
+        assertEquals(3, stack.size());
+    }
+
+    @Test
+    @DisplayName("Push Test, Throws Error When Stack is Full")
+    public void testPushWhenFull() {
+        MyStack<Integer> stack = new MyStack<>(3);
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        assertEquals(3, stack.size());
+        
+        assertThrows(IllegalStateException.class, () -> stack.push(4));
+        assertEquals(3, stack.size());
+    }
+
+    @Test
+    @DisplayName("Pop Test, Removes and Returns Top Element in LIFO Order")
+    public void testPop() {
+        MyStack<String> stack = new MyStack<>();
+        stack.push("first");
+        stack.push("second");
+        stack.push("third");
+        assertEquals(3, stack.size());
+        
+        String popped1 = stack.pop();
+        assertEquals("third", popped1);
+        assertEquals(2, stack.size());
+        
+        String popped2 = stack.pop();
+        assertEquals("second", popped2);
+        assertEquals(1, stack.size());
+        
+        String popped3 = stack.pop();
+        assertEquals("first", popped3);
+        assertEquals(0, stack.size());
+        assertTrue(stack.isEmpty());
+    }
+
+    @Test
+    @DisplayName("Pop Test, Throws Error When Stack is Empty")
+    public void testPopWhenEmpty() {
+        MyStack<String> stack = new MyStack<>();
+        assertTrue(stack.isEmpty());
+        
+        assertThrows(NoSuchElementException.class, () -> stack.pop());
+        
+        stack.push("element");
+        stack.pop();
+        assertTrue(stack.isEmpty());
+        assertThrows(NoSuchElementException.class, () -> stack.pop());
+    }
+
 
 }
