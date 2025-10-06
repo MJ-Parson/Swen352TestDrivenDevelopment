@@ -18,4 +18,11 @@ class SimpleBankAccountTest {
         assertInstanceOf(SimpleBankAccount.class, account);
     }
 
+    @Test
+    @DisplayName("Constructor Test, No Args Sets Balance to Zero")
+    public void testConstructorNoArg() {
+        SimpleBankAccount account = new SimpleBankAccount();
+        assertInstanceOf(SimpleBankAccount.class, account);
+    }
+
 }
