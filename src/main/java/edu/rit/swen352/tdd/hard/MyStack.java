@@ -38,4 +38,8 @@ public class MyStack<T> {
         return this.capacity;
     }
 
+    public boolean isEmpty() {
+        return this.size == 0;
+    }
+
 }
