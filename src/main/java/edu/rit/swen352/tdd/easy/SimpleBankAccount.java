@@ -34,4 +34,8 @@ public class SimpleBankAccount {
         this.balanceCents = 0;
     }
 
+    public double getBalance() {
+        return this.balanceCents;
+    }
+
 }

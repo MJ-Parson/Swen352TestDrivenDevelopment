@@ -29,13 +29,13 @@ class SimpleBankAccountTest {
     @DisplayName("GetBalance Test, Check Balance After Construction")
     public void testGetBalance() {
         SimpleBankAccount account1 = new SimpleBankAccount();
-        assertEquals(0.0, account1.getBalance());
+        assertEquals(0, account1.getBalance());
         
-        double testbalance2 = 250.50;
+        int testbalance2 = 25050;
         SimpleBankAccount account2 = new SimpleBankAccount(testbalance2);
         assertEquals(testbalance2, account2.getBalance());
         
-        double testbalance3 = 1000.0;
+        int testbalance3 = 10000;
         SimpleBankAccount account3 = new SimpleBankAccount(testbalance3);
         assertEquals(testbalance3, account3.getBalance());
     }
