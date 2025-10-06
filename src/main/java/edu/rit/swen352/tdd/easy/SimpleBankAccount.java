@@ -46,4 +46,8 @@ public class SimpleBankAccount {
         this.balanceCents += amountCents;
     }
 
+    public void withdraw(int amountCents) {
+        this.balanceCents -= amountCents;
+    }
+
 }
