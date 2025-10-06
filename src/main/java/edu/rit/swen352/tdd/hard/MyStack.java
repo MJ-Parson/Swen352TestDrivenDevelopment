@@ -42,4 +42,8 @@ public class MyStack<T> {
         return this.size == 0;
     }
 
+    public int size() {
+        return this.size;
+    }
+
 }
