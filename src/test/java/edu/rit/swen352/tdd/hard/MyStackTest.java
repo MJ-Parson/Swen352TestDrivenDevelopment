@@ -47,5 +47,15 @@ class MyStackTest {
         assertTrue(stack.isEmpty());
     }
 
+    @Test
+    @DisplayName("Size Test, Returns Zero at Construction")
+    public void testSize() {
+        MyStack<String> stack1 = new MyStack<>();
+        assertEquals(0, stack1.size());
+        
+        MyStack<Integer> stack2 = new MyStack<>(5);
+        assertEquals(0, stack2.size());
+    }
+
 
 }
