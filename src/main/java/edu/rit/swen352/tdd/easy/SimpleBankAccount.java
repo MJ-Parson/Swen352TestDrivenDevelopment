@@ -42,4 +42,8 @@ public class SimpleBankAccount {
         return this.balanceCents == 0;
     }
 
+    public void deposit(int amountCents) {
+        this.balanceCents += amountCents;
+    }
+
 }
