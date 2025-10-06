@@ -79,4 +79,16 @@ class SimpleBankAccountTest {
         assertTrue(account.isAccountEmpty());
     }
 
+    @Test
+    @DisplayName("Withdraw Test, Cannot Withdraw More Than Balance")
+    public void testWithdrawNegativePrevention() {
+        SimpleBankAccount account = new SimpleBankAccount(5000); //$50
+        assertThrows(IllegalStateException.class, () -> account.withdraw(10000));
+        assertEquals(5000, account.getBalance());
+        
+        SimpleBankAccount account2 = new SimpleBankAccount(); //$0! broke!
+        assertThrows(IllegalStateException.class, () -> account2.withdraw(100));
+        assertEquals(0, account2.getBalance());
+    }
+
 }
