@@ -3,6 +3,9 @@ package edu.rit.swen352.tdd.easy;
 /**
  * An American bank account that permits deposits and withdrawals.
  * The balance must never be negative.
+ * 
+ * As a work-around to the floating point issue, I chose to have all input be in cents.
+ * As an example, an input of 100 = 100 cents = $1.00
  *
  * <p>
  * You must implement these features:

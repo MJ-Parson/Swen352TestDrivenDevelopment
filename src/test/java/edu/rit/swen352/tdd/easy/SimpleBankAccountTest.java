@@ -10,4 +10,12 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class SimpleBankAccountTest {
 
+    @Test
+    @DisplayName("Constructor Test, Create Account with Initial Balance in Cents")
+    public void testConstructor() {
+        int initialBalanceCents = 10000; // $100.00
+        SimpleBankAccount account = new SimpleBankAccount(initialBalanceCents);
+        assertInstanceOf(SimpleBankAccount.class, account);
+    }
+
 }
