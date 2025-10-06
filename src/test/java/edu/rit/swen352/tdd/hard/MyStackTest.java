@@ -9,5 +9,13 @@ import static org.junit.jupiter.api.Assertions.*;
  * Test suite for the {@link MyStack} component.
  */
 class MyStackTest {
+    
+    @Test
+    @DisplayName("Constructor Test, Create Stack with Specified Capacity")
+    public void testConstructor() {
+        int capacity = 10;
+        MyStack<String> stack = new MyStack<>(capacity);
+        assertInstanceOf(MyStack.class, stack);
+    }
 
 }
