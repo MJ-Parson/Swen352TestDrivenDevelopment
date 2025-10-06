@@ -53,4 +53,15 @@ class SimpleBankAccountTest {
         assertTrue(account3.isAccountEmpty());
     }
 
+    @Test
+    @DisplayName("Deposit Test, Adds Amount in Cents to Balance")
+    public void testDeposit() {
+        SimpleBankAccount account = new SimpleBankAccount(10000); //$100
+        account.deposit(5000); //$50
+        assertEquals(15000, account.getBalance()); //$150
+        
+        account.deposit(2575); // $25.75
+        assertEquals(17575, account.getBalance()); //$175.75
+    }
+
 }
