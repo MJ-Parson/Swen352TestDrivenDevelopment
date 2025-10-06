@@ -25,4 +25,19 @@ class SimpleBankAccountTest {
         assertInstanceOf(SimpleBankAccount.class, account);
     }
 
+    @Test
+    @DisplayName("GetBalance Test, Check Balance After Construction")
+    public void testGetBalance() {
+        SimpleBankAccount account1 = new SimpleBankAccount();
+        assertEquals(0.0, account1.getBalance());
+        
+        double testbalance2 = 250.50;
+        SimpleBankAccount account2 = new SimpleBankAccount(testbalance2);
+        assertEquals(testbalance2, account2.getBalance());
+        
+        double testbalance3 = 1000.0;
+        SimpleBankAccount account3 = new SimpleBankAccount(testbalance3);
+        assertEquals(testbalance3, account3.getBalance());
+    }
+
 }
