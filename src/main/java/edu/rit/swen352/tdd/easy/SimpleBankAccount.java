@@ -30,4 +30,8 @@ public class SimpleBankAccount {
         this.balanceCents = initialBalanceCents;
     }
 
+    public SimpleBankAccount() {
+        this.balanceCents = 0;
+    }
+
 }
