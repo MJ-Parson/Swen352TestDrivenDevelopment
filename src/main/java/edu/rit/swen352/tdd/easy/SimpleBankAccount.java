@@ -24,4 +24,10 @@ package edu.rit.swen352.tdd.easy;
  */
 public class SimpleBankAccount {
 
+    private int balanceCents;
+    
+    public SimpleBankAccount(int initialBalanceCents) {
+        this.balanceCents = initialBalanceCents;
+    }
+
 }
