@@ -1,5 +1,7 @@
 package edu.rit.swen352.tdd.hard;
 
+import java.util.NoSuchElementException;
+
 /**
  * MyStack is a fixed-size, LIFO (last-in-first-out) stack.
  * @see <a href="https://en.wikipedia.org/wiki/Stack_(abstract_data_type)">Stack ADT</a>
@@ -55,6 +57,9 @@ public class MyStack<T> {
     }
 
     public T pop() {
+        if (this.size == 0) {
+            throw new NoSuchElementException("Stack is empty.");
+        }
         this.size--;
         T element = (T) this.elements[this.size];
         this.elements[this.size] = null;
