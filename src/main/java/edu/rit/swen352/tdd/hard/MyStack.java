@@ -47,6 +47,9 @@ public class MyStack<T> {
     }
 
     public void push(T element) {
+        if (this.size >= this.capacity) {
+            throw new IllegalStateException("Stack is full.");
+        }
         this.elements[this.size] = element;
         this.size++;
     }
