@@ -38,4 +38,8 @@ public class SimpleBankAccount {
         return this.balanceCents;
     }
 
+    public boolean isAccountEmpty() {
+        return this.balanceCents == 0;
+    }
+
 }
