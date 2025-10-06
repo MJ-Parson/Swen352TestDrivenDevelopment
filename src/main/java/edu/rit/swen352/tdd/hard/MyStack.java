@@ -54,4 +54,11 @@ public class MyStack<T> {
         this.size++;
     }
 
+    public T pop() {
+        this.size--;
+        T element = (T) this.elements[this.size];
+        this.elements[this.size] = null;
+        return element;
+    }
+
 }
