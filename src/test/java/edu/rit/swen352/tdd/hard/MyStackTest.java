@@ -25,4 +25,20 @@ class MyStackTest {
         assertInstanceOf(MyStack.class, stack);
     }
 
+    @Test
+    @DisplayName("GetCapacity Test, Returns Correct Capacity with Different Constructors")
+    public void testGetCapacity() {
+        MyStack<String> stack1 = new MyStack<>();
+        assertEquals(16, stack1.getCapacity());
+        
+        int capacity2 = 5;
+        MyStack<Integer> stack2 = new MyStack<>(capacity2);
+        assertEquals(capacity2, stack2.getCapacity());
+        
+        int capacity3 = 100;
+        MyStack<Double> stack3 = new MyStack<>(capacity3);
+        assertEquals(capacity3, stack3.getCapacity());
+    }
+
+
 }
