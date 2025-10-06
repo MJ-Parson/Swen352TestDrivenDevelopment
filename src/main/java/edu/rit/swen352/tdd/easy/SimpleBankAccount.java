@@ -47,6 +47,9 @@ public class SimpleBankAccount {
     }
 
     public void withdraw(int amountCents) {
+        if (amountCents > this.balanceCents) {
+            throw new IllegalStateException("Cannot withdraw more than current balance. (haha, broke)");
+        }
         this.balanceCents -= amountCents;
     }
 
