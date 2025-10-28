@@ -1,5 +1,8 @@
 package edu.rit.swen352.tdd.hard;
 
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
 /**
  * MyList is a flexible-sized sequence of elements with no gaps.
  *
@@ -18,5 +21,74 @@ package edu.rit.swen352.tdd.hard;
  *
  * @param <T> the type of elements in the list.
  */
-public class MyList<T> {
+public class MyList<T> implements Iterable<T>{
+
+    private T[] elements;
+    private int size;
+    private static final int DEFAULT_CAPACITY = 10;
+
+    @Override
+    public Iterator<T> iterator() {
+        return new MyListIterator();
+    }
+
+    private class MyListIterator implements Iterator<T> {
+        private int currentIndex=0;
+
+        @Override
+        public boolean hasNext() {
+            return currentIndex < size;
+        }
+
+        @Override
+        public T next() {
+            if (!hasNext()) {
+                throw new NoSuchElementException();
+            }
+            return elements[currentIndex++];
+        }
+    }
+
+
+    
+
+    public MyList() {
+        this.elements = (T[]) new Object[DEFAULT_CAPACITY];
+        this.size = 0;
+    }
+
+    public boolean isEmpty() {
+        if (size == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public int size() {
+        return size;
+    }
+
+    public void add(T element) {
+        elements[size++] = element;
+    }
+
+    public T get(int index) {
+        if(index < 0 || index >= size){
+            throw new NoSuchElementException("Index: " + index + ", Size: " + size);
+        }
+        return (T) elements[index];
+    }
+
+    public T remove(int index) {
+        if (index<0 || index >= size) {
+            throw new NoSuchElementException("Index: " + index + ", Size: " + size);
+        }
+        T removedElement = (T) elements[index];
+        for (int i = index; i < size-1; i++){
+            elements[i] = elements[i+1];
+        }
+        elements[--size] = null; //clear
+        return removedElement;
+    }
 }
