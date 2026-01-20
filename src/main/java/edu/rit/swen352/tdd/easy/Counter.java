@@ -1,5 +1,7 @@
 package edu.rit.swen352.tdd.easy;
 
+import java.lang.IllegalStateException;
+
 /**
  * An integral counter with an optional lower and upper bound.
  * The count must start at the lower limit and must not exceed the upper limit.
@@ -24,4 +26,59 @@ package edu.rit.swen352.tdd.easy;
  * </ul>
  */
 public class Counter {
+
+    int upperbound;
+    int lowerbound;
+    int count;
+    // Test 1a: Constructor with all parameters met
+    public Counter(int upperbound,int lowerbound) {
+        if(upperbound >= lowerbound)
+        {
+            this.upperbound = upperbound;
+            this.lowerbound = lowerbound;
+        } else {
+            this.lowerbound = upperbound;
+            this.upperbound = lowerbound;
+        }
+        this.count = this.lowerbound;
+        
+    }
+    // Test 1b: Constructor with just lower bound
+    public Counter(int lowerbound) {
+        this.lowerbound = lowerbound;
+        this.upperbound = Integer.MAX_VALUE;
+        this.count = this.lowerbound;
+    }
+    // Test 1c: Constructor with no bounds
+    public Counter() {
+        this.upperbound = Integer.MAX_VALUE;
+        this.lowerbound = 0;
+        this.count = this.lowerbound;
+    }
+
+    public int getLower() {
+        return this.lowerbound;
+    }
+
+    public int getUpper() {
+        return this.upperbound;
+    }
+
+    public int getCount() {
+        return this.count;
+    }
+
+    public void increment() {
+        if(this.count >= this.upperbound) {
+            throw new IllegalStateException("Cannot increment over upper bound.");
+        }
+        this.count += 1;
+    }
+
+    public void decrement() {
+        if(this.count <= this.lowerbound) {
+            throw new IllegalStateException("Cannot decrement under lower bound.");
+        }
+        this.count -= 1;
+    }
 }
